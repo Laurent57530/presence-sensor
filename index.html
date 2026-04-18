@@ -55,10 +55,11 @@
     <h2>🔌 Câblage LD2410S → ESP32-H2</h2>
     <table>
       <tr><th>LD2410S</th><th>ESP32-H2</th></tr>
-      <tr><td>Pin 1 — VCC</td><td>3.3V</td></tr>
-      <tr><td>Pin 2 — GND</td><td>GND</td></tr>
-      <tr><td>Pin 3 — OT1/TX</td><td>GPIO4 (RX)</td></tr>
-      <tr><td>Pin 4 — RX</td><td>GPIO5 (TX)</td></tr>
+      <tr><td>Pin 1</td><td>3.3V</td></tr>
+      <tr><td>Pin 2</td><td>GND</td></tr>
+      <tr><td>Pin 3</td><td>GPIO4</td></tr>
+      <tr><td>Pin 4</td><td>GPIO5</td></tr>
+      <tr><td>Pin 5</td><td>GPIO10</td></tr>
     </table>
     <div class="warn">⚠️ Ne pas utiliser GPIO9 sur le Super Mini — boot loop garanti.</div>
   </div>
@@ -66,7 +67,7 @@
   <div class="card">
     <h2>🛠️ Procédure après flash</h2>
     <ol>
-      <li>Dans Zigbee2MQTT, activer <strong>"Autoriser l'appairage"</strong> puis redémarrer le device.</li>
+      <li>Dans Zigbee2MQTT, activer <strong>"Autoriser l'appairage"</strong> puis mettre le device sous tension.</li>
       <li>Dans Z2M, <strong>page du device</strong> → onglet <strong>Lier</strong> → <strong>+ Ajouter</strong> :<br>
         Destination : <code>Coordinator</code> / Endpoint : <code>1</code> / Cluster : <code>msOccupancySensing</code> → <strong>Lier</strong>
       </li>
@@ -86,6 +87,16 @@
       <li>Détecte les micro-mouvements (respiration) — fonctionne même immobile</li>
       <li>Portée : jusqu'à ~3 mètres</li>
     </ul>
+  </div>
+
+  <div class="card">
+    <h2>🔄 Ré-appairage (si nécessaire)</h2>
+    <ol>
+      <li>Dans Z2M, <strong>page du device</strong> → supprimer le device (icône corbeille)</li>
+      <li>Activer <strong>"Autoriser l'appairage"</strong> dans Z2M</li>
+      <li>Redémarrer le device</li>
+      <li>Refaire les étapes 2 et 3 de la procédure après flash</li>
+    </ol>
   </div>
 
 </body>
